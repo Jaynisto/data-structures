@@ -1,21 +1,23 @@
-
-// const stack = Stack();
-
-//stack.push("Andre");
-//stack.push("Busi");
-
-// console.log(stack.pop())   -- Busi
-// console.log(stack.pop())   -- Andre
-
-// how would u implement this using a linked list
-
 function Stack() {
-	
+	let lastContainer = null;
 	function push (value) {
+		if(!lastContainer){
+			lastContainer = Node(value, null)
+		}else{
+			const newNode = Node(value, null)
+			newNode.setNextNode(lastContainer);
+			lastContainer = newNode;
+		}
 
 	}
 
 	function pop() {
+		if(lastContainer){
+			const value = lastContainer.getValue()
+			lastContainer = lastContainer.getNextNode()
+			return value;
+		}
+		return null;
 
 	}
 

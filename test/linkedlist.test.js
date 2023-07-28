@@ -1,7 +1,6 @@
 describe("Using a LinkedList", function(){
 
     it("you should be able to add 1 value to a linked list", function (){
-
         const linkedList = LinkedList();
         linkedList.add('giraffe');
         
@@ -64,7 +63,7 @@ describe("Using a LinkedList", function(){
             animals.push(animal)
         });
 
-        assert.deepEquals(['giraffe', 'elephant', 'tiger'], animals);
+        assert.deepStrictEqual(['giraffe', 'elephant', 'tiger'], animals);
 
     });
     
